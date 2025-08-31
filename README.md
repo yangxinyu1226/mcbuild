@@ -165,3 +165,4 @@
 6.  **启动服务器**:
     -   再次运行 `start.bat`。这次服务器应该就能成功启动了。
     -   启动后，你还需要在 `config/rcon_settings.json` 文件中，将 `log_file_path` 指向你服务器目录下的 `logs/latest.log` 文件。
+声明：本内容来自gemini2.5pro编写
