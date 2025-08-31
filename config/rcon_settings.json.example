@@ -1,0 +1,6 @@
+{
+    "rcon_password": "YOUR_RCON_PASSWORD_HERE",
+    "server_address": "localhost",
+    "player_id": "YOUR_MINECRAFT_USERNAME",
+    "log_file_path": "C:/path/to/your/minecraft/server/logs/latest.log"
+}

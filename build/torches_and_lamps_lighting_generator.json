@@ -1,0 +1,120 @@
+{
+    "description": "Generate several torches and lamps for lighting purposes.",
+    "generated_structure": {
+        "design_components": [
+            {
+                "tool": "single_block",
+                "args": {
+                    "x": 0,
+                    "y": 1,
+                    "z": 0,
+                    "block_type": "minecraft:torch"
+                }
+            },
+            {
+                "tool": "single_block",
+                "args": {
+                    "x": 5,
+                    "y": 1,
+                    "z": 0,
+                    "block_type": "minecraft:torch"
+                }
+            },
+            {
+                "tool": "single_block",
+                "args": {
+                    "x": 0,
+                    "y": 1,
+                    "z": 5,
+                    "block_type": "minecraft:torch"
+                }
+            },
+            {
+                "tool": "single_block",
+                "args": {
+                    "x": 5,
+                    "y": 1,
+                    "z": 5,
+                    "block_type": "minecraft:torch"
+                }
+            },
+            {
+                "tool": "cube",
+                "args": {
+                    "x": 2,
+                    "y": 2,
+                    "z": 2,
+                    "size_x": 1,
+                    "size_y": 1,
+                    "size_z": 1,
+                    "block_type": "minecraft:sea_lantern"
+                }
+            },
+            {
+                "tool": "cube",
+                "args": {
+                    "x": 3,
+                    "y": 2,
+                    "z": 3,
+                    "size_x": 1,
+                    "size_y": 1,
+                    "size_z": 1,
+                    "block_type": "minecraft:glowstone"
+                }
+            }
+        ],
+        "spatial_metadata": {
+            "bounding_box": {
+                "min_x": 0,
+                "min_y": 1,
+                "min_z": 0,
+                "max_x": 5,
+                "max_y": 2,
+                "max_z": 5
+            },
+            "dimensions": {
+                "width": 6,
+                "height": 2,
+                "depth": 6
+            }
+        }
+    },
+    "blocks": [
+        {
+            "x": 0,
+            "y": 1,
+            "z": 0,
+            "block_type": "minecraft:torch"
+        },
+        {
+            "x": 5,
+            "y": 1,
+            "z": 0,
+            "block_type": "minecraft:torch"
+        },
+        {
+            "x": 0,
+            "y": 1,
+            "z": 5,
+            "block_type": "minecraft:torch"
+        },
+        {
+            "x": 5,
+            "y": 1,
+            "z": 5,
+            "block_type": "minecraft:torch"
+        },
+        {
+            "x": 2,
+            "y": 2,
+            "z": 2,
+            "block_type": "minecraft:sea_lantern"
+        },
+        {
+            "x": 3,
+            "y": 2,
+            "z": 3,
+            "block_type": "minecraft:glowstone"
+        }
+    ]
+}

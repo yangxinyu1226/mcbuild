@@ -1,0 +1,351 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 我的世界建造大师</title>
+    <style>
+        :root {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --primary-color: #00aaff;
+            --secondary-color: #1e1e1e;
+            --highlight-color: #2a2a2a;
+            --border-color: #333;
+            --header-height: 60px;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: rgba(18, 18, 18, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            height: var(--header-height);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 100%;
+        }
+
+        nav .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        main {
+            padding-top: var(--header-height);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+        }
+
+        .hero h1 {
+            font-size: 3.2em;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            color: #bdc3c7;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        section {
+            padding: 60px 20px;
+        }
+        
+        .section-bg {
+             background-color: var(--secondary-color);
+             border-top: 1px solid var(--border-color);
+             border-bottom: 1px solid var(--border-color);
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            color: var(--primary-color);
+        }
+
+        .card {
+            background-color: var(--highlight-color);
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+            font-size: 1.8em;
+        }
+
+        /* New Detailed Workflow Styles */
+        .workflow-list {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .workflow-item {
+            background: var(--secondary-color);
+            border-left: 4px solid var(--border-color);
+            padding: 20px 25px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .workflow-item h4 {
+            margin: 0 0 15px 0;
+            font-size: 1.4em;
+            color: var(--text-color);
+        }
+
+        .workflow-item.ai-step {
+            border-left-color: var(--primary-color);
+        }
+
+        .workflow-item.ai-step h4 {
+            color: var(--primary-color);
+        }
+
+        .ai-details {
+            background: rgba(0, 170, 255, 0.05);
+            border: 1px solid rgba(0, 170, 255, 0.2);
+            border-radius: 6px;
+            padding: 15px;
+            margin-top: 15px;
+            font-size: 0.95em;
+        }
+
+        .ai-details strong {
+            color: var(--primary-color);
+        }
+
+        code {
+            background-color: #2c3e50;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-family: "Courier New", Courier, monospace;
+        }
+
+        pre code {
+            display: block;
+            padding: 15px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            color: #777;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">AI建造大师</div>
+            <ul>
+                <li><a href="#intro">项目简介</a></li>
+                <li><a href="#workflow">AI决策链路</a></li>
+                <li><a href="#guide">使用指南</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>AI 我的世界建造大师</h1>
+            <p>v3.0 智能架构版 - 一个会学习、能成长、懂协作的自动化AI建筑团队</p>
+        </section>
+
+        <div class="container">
+            <section id="intro">
+                <h2>项目核心理念</h2>
+                <div class="card">
+                    <p>本项目的核心是实现两大目标：首先，通过AI的规划、设计与执行能力，完成传统脚本难以实现的复杂、宏大、富有创意的建筑项目。其次，构建一个能够根据未知需求，自我扩展能力、自动编写新工具的软件系统，使其具备理论上无限的成长潜力。</p>
+                </div>
+            </section>
+        </div>
+
+        <section id="workflow" class="section-bg">
+            <div class="container">
+                <h2>主规划系统：AI决策全链路解析</h2>
+                <div class="workflow-list">
+
+                    <div class="workflow-item">
+                        <h4>第一步: 指令接收</h4>
+                        <p>流程开始于<code>mc_listener.py</code>，它会监听游戏聊天，捕获玩家输入的<code>!build &lt;建筑描述&gt;</code>指令，并将其作为任务放入队列。</p>
+                    </div>
+
+                    <div class="workflow-item ai-step">
+                        <h4>🧠 AI决策点 #1 - 任务路由 (`main_planner.py`)</h4>
+                        <p>总指挥AI苏醒，它需要决定如何处理这个任务。这是系统展现其“智慧”的第一个环节。</p>
+                        <div class="ai-details">
+                            <p><strong>AI输入:</strong> 1. 玩家的原始指令 (例如“建一个海盗船”)  2. 当前可用的所有生成器工具列表 (例如 `[building_generator.py, yard_generator.py]`)。</p>
+                            <p><strong>AI任务:</strong> 分析指令，并与工具列表对比，然后回答：“要完成这个任务，我应该使用现有工具，还是需要一个全新的工具？”</p>
+                            <p><strong>AI输出:</strong> 一个包含决策的JSON对象，例如 `{"action": "design_new_generator"}`。</p>
+                        </div>
+                    </div>
+
+                    <div class="workflow-item ai-step">
+                        <h4>(进化分支) 🧠 AI决策点 #2 - 新工具设计 (`generator_designer.py`)</h4>
+                        <p>如果上一步决定需要新工具，此模块被激活，展现系统的“自我进化”能力。</p>
+                        <div class="ai-details">
+                            <p><strong>AI输入:</strong> 一个对新工具的要求 (例如“需要一个能生成船体、桅杆和帆的生成器”)。</p>
+                            <p><strong>AI任务:</strong> 扮演一个程序员，以`generator_template.py.txt`为模板，**编写一个完整的新Python脚本**。它需要填充类名、功能描述以及为这个新工具量身定制的系统提示词。</p>
+                            <p><strong>AI输出:</strong> 一个功能完整、语法正确的新生成器脚本代码，例如 `pirate_ship_generator.py`。</p>
+                        </div>
+                    </div>
+
+                    <div class="workflow-item ai-step">
+                        <h4>🧠 AI决策点 #3 - 组件设计 (在各个 `generator` 中)</h4>
+                        <p>当确定了使用哪个生成器后，具体的“设计工作”就开始了。这一步展现了AI的“创造力”。</p>
+                        <div class="ai-details">
+                            <p><strong>AI输入:</strong> 一个具体的子任务描述 (例如“一个带有尖顶的巫师塔”或者“一段10米长的城墙”)。</p>
+                            <p><strong>AI任务:</strong> 根据描述，将这个建筑在脑中分解成`cube`, `sphere`, `pyramid`等基础几何形状的组合，并输出一个包含这些组合的JSON任务清单。</p>
+                            <p><strong>AI输出:</strong> 一个JSON数组，其中每个元素都是一个几何图元的生成指令。</p>
+                        </div>
+                    </div>
+
+                     <div class="workflow-item ai-step">
+                        <h4>🧠 AI决策点 #4 - 空间布局 (`supervisor.py`)</h4>
+                        <p>所有独立的建筑组件设计完毕后，“建筑结构总工程师”AI登场，解决最复杂的3D空间规划问题。</p>
+                        <div class="ai-details">
+                            <p><strong>AI输入:</strong> 所有已生成的建筑组件的列表，以及每个组件的精确尺寸和边界框信息。</p>
+                            <p><strong>AI任务:</strong> 遵循建筑学逻辑（地基在下，屋顶在上）和“绝不重叠”的首要原则，为每一个独立的组件计算出一个精确的、相对于总建筑原点的 `x, y, z` 空间偏移量（offset）。</p>
+                            <p><strong>AI输出:</strong> 一个包含所有组件文件名及其空间偏移量（offset）的最终布局方案JSON。</p>
+                        </div>
+                    </div>
+
+                    <div class="workflow-item">
+                        <h4>第五步: 最终施工 (`main_planner.py`)</h4>
+                        <p>这是流程的最后一步，将所有AI的智慧结晶转化为物理世界的建筑。此步骤**不涉及AI**，是纯粹的逻辑计算和执行。</p>
+                        <p>总指挥读取最终布局方案，并对每一个方块，应用三级坐标换算公式 `最终世界坐标 = 玩家基准坐标 + 组件偏移坐标 + 方块相对坐标`，得到其在世界中的绝对坐标，然后通过RCON指令逐一建造。</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <section id="guide">
+                <h2>使用指南</h2>
+                <div class="card">
+                    <h3>Designer 系统 (快速、手动)</h3>
+                    <ol>
+                        <li><b>生成模型</b>: 运行 <code>python designer/gui.py</code>。</li>
+                        <li><b>启动服务</b>: 打开<b>新</b>终端，运行 <code>python designer/listener.py</code>。</li>
+                        <li><b>游戏内建造</b>: 输入 <code>list</code> 查看列表，输入 <code>add &lt;编号&gt;</code> 建造。</li>
+                    </ol>
+                </div>
+                 <div class="card">
+                    <h3>Main Planner 系统 (复杂、自动)</h3>
+                    <ol>
+                        <li><b>启动服务</b>: <b>同时打开两个</b>独立的终端窗口，分别运行：
+                            <pre><code># 终端 1: 总规划师
+python -X utf8 src/main_planner.py</code></pre>
+                            <pre><code># 终端 2: 主监听器
+python -X utf8 src/mc_listener.py</code></pre>
+                        </li>
+                        <li><b>游戏内建造</b>: 输入 <code>!build &lt;你的复杂建筑描述&gt;</code>。</li>
+                    </ol>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 AI Minecraft Builder Project. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showTab(tabId) {
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+            const buttons = document.querySelectorAll('.tab-button');
+            buttons.forEach(button => button.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            // Default tab logic here if needed, though the HTML is static now.
+        });
+
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                const offset = document.querySelector('header').offsetHeight;
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

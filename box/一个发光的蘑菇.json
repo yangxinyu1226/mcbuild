@@ -1,0 +1,53 @@
+{
+    "blocks": [
+        {
+            "x": 2,
+            "y": 0,
+            "z": 2,
+            "block_type": "dirt"
+        },
+        {
+            "x": 2,
+            "y": 1,
+            "z": 2,
+            "block_type": "red_mushroom"
+        },
+        {
+            "x": 2,
+            "y": 2,
+            "z": 2,
+            "block_type": "red_mushroom"
+        },
+        {
+            "x": 1,
+            "y": 2,
+            "z": 2,
+            "block_type": "red_mushroom"
+        },
+        {
+            "x": 3,
+            "y": 2,
+            "z": 2,
+            "block_type": "red_mushroom"
+        },
+        {
+            "x": 2,
+            "y": 2,
+            "z": 1,
+            "block_type": "red_mushroom"
+        },
+        {
+            "x": 2,
+            "y": 2,
+            "z": 3,
+            "block_type": "red_mushroom"
+        },
+        {
+            "x": 2,
+            "y": 3,
+            "z": 2,
+            "block_type": "glowstone"
+        }
+    ],
+    "description": "一个发光的蘑菇"
+}

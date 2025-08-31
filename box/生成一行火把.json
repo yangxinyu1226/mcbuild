@@ -1,0 +1,35 @@
+{
+    "blocks": [
+        {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "block_type": "torch"
+        },
+        {
+            "x": 1,
+            "y": 0,
+            "z": 0,
+            "block_type": "torch"
+        },
+        {
+            "x": 2,
+            "y": 0,
+            "z": 0,
+            "block_type": "torch"
+        },
+        {
+            "x": 3,
+            "y": 0,
+            "z": 0,
+            "block_type": "torch"
+        },
+        {
+            "x": 4,
+            "y": 0,
+            "z": 0,
+            "block_type": "torch"
+        }
+    ],
+    "description": "生成一行火把"
+}

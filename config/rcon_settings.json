@@ -1,0 +1,6 @@
+{
+    "rcon_password": "服务器密码跟RCON设置一样即可",
+    "server_address": "localhost本地的话填这个",
+    "player_id": "DanJiYouXi-VA1玩家名字ID",
+    "log_file_path": "C:/Users/Administrator/Desktop/MyServer/logs/latest.log默认日志文件位置"
+}
